@@ -1,0 +1,36 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				background-color: skyblue;
+				padding: 8px;
+			}
+			h1 {
+				font-size: 40px;
+				color: red;
+			}
+			p {
+				font-size: 18px;
+				color: seagreen;
+			}
+		</style>
+	</head>
+	<body>
+        <% include partial/nav.ejs %>
+		<h1>Welcome!</h1>
+		<p>I am the profile</p>
+		<p>This is my id : <%= person %></p>
+		<p>I am <%= data.age %> years old</p>
+        <p>I am a <%= data.job %> by profession</p>
+        <p>My hobbies are:
+            <ul>
+                <% data.hobbies.forEach(function(item){%>
+                    <li><%= item %></li>
+                <%}); %>
+            </ul>
+        </p>
+	</body>
+</html>
